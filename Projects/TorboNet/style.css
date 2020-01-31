@@ -1,0 +1,187 @@
+/* Base Styles -------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e0e7f1;
+    color: #350e03;
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+.title {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+h1 {
+    font-size: 6rem;
+    text-shadow: 2px 2px 5px #230902;
+    margin: 30px 0 0;
+    font-weight: 100;
+    letter-spacing: 0.15em;
+}
+
+h2 {
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+ul,
+ol {
+    margin: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Pseudo-classes ------------------ */
+
+a:link {
+    color: #cf7e47;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #b06a44;
+}
+
+a:hover {
+    color: #0f819a;
+}
+
+/* Main Styles --------------------- */
+
+.main-header,
+.main-content,
+.main-footer,
+.list-heading {
+    text-align: center;
+}
+
+.main-header {
+    background: linear-gradient(#cf7e47, transparent),
+                linear-gradient(transparent, #e0e7f1),
+              #cf7e47 url(toby-asleep.jpg) center;
+    background-size: cover;
+    height: 850px;
+    color: #e0e7f1;
+    padding-top: 180px;
+}
+
+.title {
+    font-size: 1.25rem;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0f819a;
+}
+
+.intro {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.main-content,
+.group,
+.main-footer {
+    padding: 25px 0 50px;
+}
+
+.callout {
+    font-size: 1.25rem;
+    border-bottom: 3px solid;
+    padding-bottom: 3px;
+}
+
+.t-border {
+    border-top: 2px solid #b06a44;
+}
+
+.group {
+    padding-top: 70px;
+    border-bottom: 2px solid #b06a44;
+}
+
+.main-footer {
+    border-bottom: 10px solid #cf7e47;
+}
+
+/* Layout Styles ------------------ */
+
+.main-content,
+.group {
+    width: 80%;
+    margin: auto;
+    max-width: 960px;
+}
+
+.arrow {
+    width: 50px;
+    margin-top: 100px;
+}
+
+.why-box {
+    background: #230902 url('toby-existential-crisis.jpg') center;
+    background-size: cover;
+    padding: 10% 12%;
+    margin: 100px 0 60px;
+    border-top: 10px solid #0f819a;
+    color: #e0e7f1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 150px 100px rgba(0,0,0, .8);
+}
+
+/* Floated Columns ------------------ */
+
+.reasons,
+.strategies {
+    width: 46.5%;
+}
+
+.reasons {
+    float: left;
+}
+
+.strategies {
+    float: right;
+}
+
+/* Float Clearfix ------------------ */
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Media Queries -------------------- */
+
+@media (max-width: 620px) {
+    h1 {
+        font-size: 3.8rem;
+        letter-spacing: 0.1em;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .reasons,
+    .strategies {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        border-bottom: none;
+    }
+}
