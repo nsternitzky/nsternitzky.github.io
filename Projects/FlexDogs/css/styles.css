@@ -218,7 +218,8 @@ label.light {
         align-items: center;
     }
 	.main-header,
-	.row {
+	.row,
+	.profile-wrapper {
 		width: 90%;
 		margin: 0 auto;
     }
@@ -231,13 +232,11 @@ label.light {
 	.tagline {
 		font-size: 1.4em;
 	}
-	form {
-		width: 80%;
-	}
 }
 @media (min-width: 1150px) {
 	.main-header,
-	.row {
+	.row,
+	.profile-wrapper {
 		width: 80%;
 		max-width: 1150px;
     }
