@@ -73,6 +73,7 @@ select {
   box-shadow: 0 2px 0 rgba(0,0,0,0.03) inset;
   margin-bottom: 30px;
   border-radius: 10px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 input[type="radio"],
