@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlexDogs - Create Profile</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+		<h1 class="name"><a href="index.html">FlexDogs</a></h1>
+		<ul class="main-nav">
+			<li><a href="#">huskies</a></li>
+			<li><a href="#">corgis</a></li>
+			<li><a href="#">shibas</a></li>
+			<li><a href="profile.html">create profile</a></li>
+		</ul>
+    </header><!--/.main-header-->
+    
+    <div class="banner">
+		<img class="logo" src="img/skateboard-doggo.jpg" alt="Skateboard doggo">
+		<h1 class="headline">FlexDogs</h1>
+		<span class="tagline">A website about dogs - built using Flexbox. Neat.</span>
+    </div><!--/.banner-->
+
+    <div class="col">
+
+        <h2>Create a Profile</h2>
+
+        <form>
+
+            <fieldset>
+                <legend><span class="number">1</span> Your basic info</legend>
+                <label for='name'>Name</label>
+                <input type='text' id='name' name='user_name'>
+                <label for='mail'>Email</label>
+                <input type='email' id='mail' name='user_email'>
+                <label for='password'>Password</label>
+                <input type='password' id='password' name='user_password'>
+                
+                <label>Age:</label>
+                <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">Under 13</label><br>
+                <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="light">13 or Older</label>
+            </fieldset>
+
+            <fieldset>
+                <legend><span class="number">2</span> Your profile</legend>
+                <label for='bio'>Biography</label>
+                <textarea id='bio' name='user_bio'></textarea>
+                
+                <label for="fav_breed">Favorite breed:</label>
+                <select id="fav_breed" name="user_fav_breed">
+                <optgroup label="Curly Tail Bois">
+                    <option value="siberian_husky">Siberian Husky</option>
+                    <option value="alaskan_malamute">Alaskan Malamute</option>
+                    <option value="shiba_inu">Shiba Inu</option>
+                </optgroup>
+                <optgroup label="Non-curly Tail Bois">
+                    <option value="golden_retriever">Golden Retriever</option>
+                    <option value="chihuahua">Chihuahua</option>
+                    <option value="welsh_corgi">Welsh Corgi</option>
+                </optgroup>
+                </select>
+                
+                <label>Interests:</label>
+                <input type="checkbox" id="boofers" value="interest_boofers" name="user_interest"><label class="light" for="boofers">Boofers</label><br>
+                <input type="checkbox" id="big_bois" value="interest_big_bois" name="user_interest"><label class="light" for="big_bois">Big bois</label><br>
+                <input type="checkbox" id="buppers" value="interest_buppers" name="user_interest"><label class="light" for="buppers">Buppers</label>
+            </fieldset>
+            
+            <button type='submit'>Sign Up</button>
+
+        </form>
+
+    </div>
+
+    <footer class="main-footer">
+		<span>&copy;2020 Doggo Enthusiasts LLC</span>
+	</footer>
+    
+</body>
+</html>
