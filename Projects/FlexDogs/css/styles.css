@@ -86,7 +86,7 @@ select {
 	height: 32px;
 }
 
-button {
+.submitBtn {
 	padding: 19px 39px 18px 39px;
 	color: #FFF;
 	background-color: #3acec2;
@@ -142,10 +142,14 @@ label.light {
 
 .name {
 	font-size: 1.35em;
-	margin: 0;
+	margin: 0 auto;
 }
 .main-nav {
 	margin-top: 5px;
+	display: none;
+}
+.menu-open {
+	display: block;
 }
 .name a,
 .main-nav a {
@@ -202,19 +206,34 @@ label.light {
     display: block;
     margin: 0 auto;
 }
+.fa-bars {
+	color: #3acec2;
+	font-size: 1.8em;
+}
+.toggle-menu {
+	position: absolute;
+	margin-left: 10px;
+	top: 22px;
+	border: none;
+	background: #fff;
+}
 
 /* ================================= 
   Media Queries
 ==================================== */
 
 @media (min-width: 769px) {
-    .main-header,
-    .main-nav,
+	.toggle-menu {
+		display: none;
+	}
+	.main-header,
+	.main-nav,
 	.row {
         display: flex;
-    }
+	}
     .main-header {
-        flex-direction: column;
+		flex-direction: row;
+		justify-content: space-between;
         align-items: center;
     }
 	.main-header,
@@ -239,10 +258,6 @@ label.light {
 	.profile-wrapper {
 		width: 80%;
 		max-width: 1150px;
-    }
-    .main-header {
-        flex-direction: row;
-        justify-content: space-between;
     }
     .col {
         flex-basis: 0;

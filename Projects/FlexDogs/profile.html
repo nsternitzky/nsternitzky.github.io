@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FlexDogs - Create Profile</title>
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/afc80b495e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <header class="main-header">
-		<h1 class="name"><a href="index.html">FlexDogs</a></h1>
+        <button class="toggle-menu"><i class="fas fa-bars"></i></button>
+        <h1 class="name"><a href="index.html">FlexDogs</a></h1>
 		<ul class="main-nav">
 			<li><a href="#">huskies</a></li>
 			<li><a href="#">corgis</a></li>
@@ -71,7 +73,7 @@
                 <input type="checkbox" id="buppers" value="interest_buppers" name="user_interest"><label class="light" for="buppers">Buppers</label>
             </fieldset>
             
-            <button type='submit'>Sign Up</button>
+            <button type='submit' class='submitBtn'>Sign Up</button>
 
         </form>
 
@@ -81,5 +83,6 @@
 		<span>&copy;2020 Doggo Enthusiasts LLC</span>
 	</footer>
     
+    <script src='js/app.js'></script>
 </body>
 </html>
