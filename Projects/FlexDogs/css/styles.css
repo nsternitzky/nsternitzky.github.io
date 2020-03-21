@@ -226,6 +226,9 @@ label.light {
 	.toggle-menu {
 		display: none;
 	}
+	.name {
+		margin: 0;
+	}
 	.main-header,
 	.main-nav,
 	.row {
