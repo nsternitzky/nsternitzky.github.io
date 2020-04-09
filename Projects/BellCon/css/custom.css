@@ -7,6 +7,12 @@ a {
   cursor: pointer;
 }
 
+.btn-primary:focus {
+  color:#fff;
+  background-color:#436962;
+  border-color:#3e615b;
+}
+
 .navbar .navbar-brand {
   color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
