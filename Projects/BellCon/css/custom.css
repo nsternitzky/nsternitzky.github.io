@@ -51,6 +51,12 @@ a {
     height: 407px;
   }
 
+  .display-sm-2 {
+    font-size:5.5rem;
+    font-weight:300;
+    line-height:1.2;
+  }
+
 }
 
 /* Medium devices and up */
