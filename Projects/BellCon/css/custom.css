@@ -1,0 +1,71 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 56px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.navbar .navbar-brand {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+
+.jumbotron-bg {
+  height: 343px;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.5) 100%),
+                    url('../img/nook-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.jumbotron {
+  background: transparent;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 5px #000;
+}
+
+.card-img-top {
+  max-height: 240px;
+  object-fit: contain;
+  padding-top: 10px;
+}
+
+.schedule-thumbnail {
+  max-height: 48px;
+  object-fit: contain;
+}
+
+/* Small devices and up */
+
+@media (min-width: 576px) {
+
+  .jumbotron-bg {
+    height: 407px;
+  }
+
+}
+
+/* Medium devices and up */
+
+@media (min-width: 768px) {
+
+  .card {
+    opacity: 0.6;
+    transition: 0.5s;
+  }
+
+  .card:hover {
+    transform: scale(1.25);
+    z-index: 1;
+    opacity: 1;
+  }
+
+}
