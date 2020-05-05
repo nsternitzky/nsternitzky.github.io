@@ -48,8 +48,8 @@ new Vue({
          */
         handleSelect: function() {
             Promise.all([
-                fetchData(`http://pokeapi.co/api/v2/pokemon/${this.species.name}/encounters`), //fetch location info
-                fetchData(`http://pokeapi.co/api/v2/pokemon/${this.species.name}/`) //fetch species info for img
+                fetchData(`https://pokeapi.co/api/v2/pokemon/${this.species.name}/encounters`), //fetch location info
+                fetchData(`https://pokeapi.co/api/v2/pokemon/${this.species.name}/`) //fetch species info for img
             ])
             .then(data => {
                 //construct locationList from fetched data
@@ -176,11 +176,11 @@ new Vue({
      * Upon mounting, fetch data for species list and version list
      */
     mounted() {
-        fetchData('http://pokeapi.co/api/v2/pokemon/')
-            .then(data => fetchData(`http://pokeapi.co/api/v2/pokemon/?limit=${data.count}`))
+        fetchData('https://pokeapi.co/api/v2/pokemon/')
+            .then(data => fetchData(`https://pokeapi.co/api/v2/pokemon/?limit=${data.count}`))
             .then(data => this.speciesList = data.results.sort((a,b) => a.name > b.name ? 1 : -1))
-        fetchData('http://pokeapi.co/api/v2/version/')
-            .then(data => fetchData(`http://pokeapi.co/api/v2/version/?limit=${data.count}`))
+        fetchData('https://pokeapi.co/api/v2/version/')
+            .then(data => fetchData(`https://pokeapi.co/api/v2/version/?limit=${data.count}`))
             .then(data => this.versionList = data.results)
     }
   });
