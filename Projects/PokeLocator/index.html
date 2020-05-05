@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pok&eacute;Locator</title>
+</head>
+<body>
+    <h1>Pok&eacute;Locator</h1>
+
+    <div id='locator-app'>
+
+        <label for="species">Select a Pok&eacute;mon species:</label>
+        <select id="species" v-model='species.name' v-on:change='handleSelect'>
+            <option v-for='item in speciesList' v-bind:value='item.name'>{{formatSpeciesName(item.name)}}</option>
+        </select>
+
+        <div v-show='species.name'>
+            <img v-show='species.img' v-bind:src='species.img' v-bind:alt='formatSpeciesName(species.name)'>
+            <h3>{{formatSpeciesName(species.name)}} can be found at the following locations:</h3>
+            <ul>
+                <li v-for='item in locationList'>{{formatVersion(item.version)}}
+                    <ul>
+                        <li v-for='location in item.locations'>{{formatLocation(location)}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src='js/app.js'></script>
+
+</body>
+</html>
