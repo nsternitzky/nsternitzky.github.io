@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 80px auto 10px;
+}
+
+#main-photo {
+    max-width: 100%;
+    border-radius: .5rem;
+    margin: auto
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0;
+}
+
+.sidebar {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 1.25rem;
+}

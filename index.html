@@ -1,19 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nick Sternitzky or something</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="./main.css" rel="stylesheet">
+
+  <title>Nick Sternitzky</title>
 </head>
-<body>
-    <h1>My Website</h1>
-    <ul>
-        <li><a href="Projects/TorboNet/index.html">TorboNet</a></li>
-        <li><a href="Projects/FlexDogs/index.html">FlexDogs</a></li>
-        <li><a href='Projects/BellCon/index.html'>BellCon</a></li>
-        <li><a href='Projects/Checkers/index.html'>Checkers</a></li>
-        <li><a href='Projects/PokeLocator/index.html'>Pok&eacute;Locator</a></li>
-    </ul>
+
+<body data-spy="scroll">
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://nsternitzky.github.io/index.html">Nick Sternitzky</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link d-sm-none" href="#projects">Projects</a>
+        </div>
+      </div>
+    </div>
+  </nav><!-- /navbar -->
+
+  <div id="app" class="p-2">
+    <div class="row">
+      <div class="col-md-3 my-2 sidebar">
+        <img id="main-photo" src="./img/nickphoto.jpg" alt="Photo of Nick Sternitzky" />
+        <h2 class="py-3">Nick Sternitzky</h2>
+        <hr>
+        <p>Nick Sternitzky is a native of northeast Wisconsin currently residing in Chicago. He has a bachelor's degree
+          in computer science and an associate's degree in accounting, and his work experience has made him familiar
+          with the automotive and life safety and security industries. Nick currently works as an accounts receivable
+          specialist but is looking to move into a web developer role. In his free time, he enjoys working out, playing
+          Dungeons and Dragons with friends, and learning different languages (of both the human and computer varieties).
+        </p>
+        <hr>
+        <h4>Find Nick at:</h4>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/nicksternitzky/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/nsternitzky">GitHub</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-9 my-2">
+        <h2 id="projects">Projects</h2>
+        <hr>
+        <section>
+
+          <div class="card my-2" v-for="project in projects" :key="project.name">
+            <div class="card-body">
+              <a :href="project.url">
+                <h5 class="card-title">{{project.name}}</h5>
+              </a>
+              <p class="card-text">{{project.description}}</p>
+              <h6 class="focus-header">Focuses:</h6>
+              <p>{{project.focuses.join(' | ')}}</p>
+              <a :href="project.url" class="btn btn-primary">View project</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <script>var app = new Vue({
+      el: '#app',
+      data: {
+        projects: [
+          {
+            name: "TorboNet",
+            url: "Projects/TorboNet/index.html",
+            description: "Simple webpage about the world's worst dog, built to practice basic HTML and CSS",
+            focuses: ["HTML", "CSS"]
+          },
+          {
+            name: "FlexDogs",
+            url: "Projects/FlexDogs/index.html",
+            description: "Website about dogs built using Flexbox; also includes basic HTML signup form",
+            focuses: ["CSS", "CSS Flexbox", "HTML Forms"]
+          },
+          {
+            name: "BellCon",
+            url: "Projects/BellCon/index.html",
+            description: "Website for a fictional convention based on the Animal Crossing series, built to practice working with Bootstrap; other features include form validation, auto-collapsing navbar for small screens, pop-out cards, parallax header image, and schedule items that expand and collapse",
+            focuses: ["Bootstrap", "JavaScript"]
+          },
+          {
+            name: "Checkers",
+            url: "Projects/Checkers/index.html",
+            description: "Basic recreation of checkers in which two players share one screen, built to practice writing object-oriented JavaScript",
+            focuses: ["JavaScript", "Object-Oriented JavaScript"]
+          },
+          {
+            name: "Pok\éLocator",
+            url: "Projects/PokeLocator/index.html",
+            description: "Tool for locating each species of Pok\émon listed by game title, built to practice using Vue and retrieving data using the Fetch API",
+            focuses: ["Vue.js", "Fetch API"]
+          }
+        ]
+      }
+    })</script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
