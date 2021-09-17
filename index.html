@@ -61,25 +61,39 @@
         <h2 id="projects">Projects</h2>
         <hr>
         <section>
-
-          <div class="card my-2" v-for="project in projects" :key="project.name">
-            <div class="card-body">
-              <a :href="project.url">
-                <h5 class="card-title">{{project.name}}</h5>
-              </a>
-              <p class="card-text">{{project.description}}</p>
-              <h6 class="focus-header">Focuses:</h6>
-              <p>{{project.focuses.join(' | ')}}</p>
-              <a :href="project.url" class="btn btn-primary">View project</a>
-            </div>
-          </div>
+          <project-card v-for="project in projects" v-bind="project" :key="project.name"></project-card>
         </section>
       </div>
 
     </div>
   </div>
 
-  <script>var app = new Vue({
+  <script type="text/x-template" id="project-card-template">
+    <div class="card my-2">
+      <div class="card-body">
+        <a :href="url">
+          <h5 class="card-title">{{name}}</h5>
+        </a>
+        <p class="card-text">{{description}}</p>
+        <h6 class="focus-header">Focuses:</h6>
+        <p>{{focuses.join(' | ')}}</p>
+        <a :href="url" class="btn btn-primary">View project</a>
+      </div>
+    </div>
+  </script>
+    
+  <script>
+    Vue.component('project-card', {
+      template: "#project-card-template",
+      props: {
+        name: {type: String, required: true},
+        url: {type: String, required: true},
+        description: {type: String},
+        focuses: {type: Array}
+      }
+    })
+
+    var app = new Vue({
       el: '#app',
       data: {
         projects: [
@@ -115,7 +129,8 @@
           }
         ]
       }
-    })</script>
+    })
+  </script>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
